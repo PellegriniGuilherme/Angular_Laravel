@@ -9,7 +9,7 @@ _Por favor rodar comandos na ordem_
   composer install
   php artisan migrate
   php artisan db:seed
-  
+  phpartisan server
   cd ..
   
   cd front_end
