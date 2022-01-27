@@ -1,9 +1,9 @@
 # Angular_Laravel
-Projeto indique um amigo, back-end desenvolvido em Laravel e front-end desenvolvido em Angular
+Projeto "indique um amigo", back-end desenvolvido em Laravel e front-end desenvolvido em Angular
 
 ## Instalação
 #### _Configurar arquivo .env Laravel com base de dados disponível_
-_Por favor rodar comandos na ordem_
+_Por favor, rodar comandos na ordem_
 ```
   cd back_end
   composer install
@@ -17,4 +17,4 @@ _Por favor rodar comandos na ordem_
   ng serve
 ```
 
-### _Prontinho aplicação rodando!_
+### _Prontinho, aplicação rodando!_
