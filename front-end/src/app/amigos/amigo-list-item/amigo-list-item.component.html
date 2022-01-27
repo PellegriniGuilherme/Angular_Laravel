@@ -1,0 +1,25 @@
+<div class="border border-orange-300 rounded my-2 p-2 pr-0 px-5 flex flex-row items-center mx-5">
+    <h3 class="mx-3">
+        {{amigo.nome}}
+    </h3>
+    <h4 class="mx-3">
+        {{amigo.email}}
+    </h4>
+    <span class="mx-3 px-2 py-1 font-semibold rounded bg-yellow-400"  *ngIf="amigo.status_id === 1">
+        Iniciada
+    </span>
+    <span class="mx-3 px-2 py-1 font-semibold rounded bg-blue-400"  *ngIf="amigo.status_id === 2">
+        Em processo
+    </span>
+    <span class="mx-3 px-2 py-1 font-semibold rounded bg-green-400" *ngIf="amigo.status_id === 3">
+        Finalizada
+    </span>
+    <div class="mx-3 ml-auto flex flex-row">
+        <button type="button" [routerLink]="['/edit', amigo.id]" class="rounded-full mx-1 w-8 h-8 bg-emerald-500 justify-center items-center">
+            <i class="bi bi-pencil-fill text-white"></i>
+        </button>
+        <button class="rounded-full mx-1 w-8 h-8 bg-red-500 flex justify-center items-center" (click)="delete(amigo)">
+            <i class="bi bi-x-lg text-white"></i>
+        </button>
+    </div>
+</div>

@@ -1,0 +1,118 @@
+<div class="flex flex-col justify-center">
+    
+    <h1 class="text-center m-3 text-3xl text-orange-500 font-extrabold">
+        {{ title.toUpperCase() }}
+    </h1>
+
+    <form (ngSubmit)="onSubmit()" class="flex flex-col">
+        <div class="mb-4 mx-4 flex-2">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="nome">
+                Nome
+            </label>
+            <input 
+                [(ngModel)]="amigo.nome" name="nome" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
+                id="nome"
+                type="text" 
+                placeholder="Nome"
+                [ngClass]="{'border-red-600': errors.nome}"
+                [disabled]="update === true"
+            />
+            <div class="text-red-600 flex items-center" *ngIf="errors.nome">
+                {{errors.nome}}
+            </div>
+            
+        </div>
+        <div class="mb-4 mx-4 flex-2">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="cpf">
+                CPF
+            </label>
+            <input 
+                [(ngModel)]="amigo.cpf" 
+                name="cpf"
+                mask="000.000.000-00"
+                id="cpf" 
+                type="text" 
+                placeholder="CPF"
+                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
+                [ngClass]="{'border-red-600': errors.cpf}"
+                [disabled]="update === true"
+            />
+            <div class="text-red-600 flex items-center" *ngIf="errors.cpf">
+                {{errors.cpf}}
+            </div>
+        </div>
+        <div class="mb-4 mx-4 flex-2">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="telefone">
+                Telefone
+            </label>
+            <input 
+                [(ngModel)]="amigo.telefone" 
+                mask="(00) 0000-00000" 
+                name="telefone" 
+                id="telefone" 
+                type="text" 
+                placeholder="Telefone"
+                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
+                [ngClass]="{'border-red-600': errors.telefone}"
+                [disabled]="update === true"
+            />
+            <div class="text-red-600 flex items-center mb-1" *ngIf="errors.telefone">
+                {{errors.telefone}}
+            </div>
+        </div> 
+        <div class="mb-4 mx-4 flex-2">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="email">
+                E-mail
+            </label>
+            <input 
+                [(ngModel)]="amigo.email" 
+                name="email" 
+                id="email" type="email" 
+                placeholder="Email"
+                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                [ngClass]="{'border-red-600': errors.email}"
+                [disabled]="update === true"
+            />
+            <div class="text-red-600 flex items-center mb-2" *ngIf="errors.email">
+                {{errors.email}}
+            </div>
+        </div>
+        <div class="mb-4 mx-4 flex-2" *ngIf="update === true">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="email">
+                Status
+            </label>
+            <select 
+                [(ngModel)]="amigo.status_id" 
+                name="status_id" 
+                id="status_id"
+                placeholder="Status"
+                class="shadow w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-10 pl-3 pr-6 text-base border rounded bg-white"
+                [ngClass]="{'border-red-600': errors.status_id}"
+            >
+                <option value="1" [selected]="amigo.status_id === 1">
+                    INICIADA
+                </option>
+                <option value="2" [selected]="amigo.status_id === 2">
+                    EM PROCESSO
+                </option>
+                <option value="3" [selected]="amigo.status_id === 3">
+                    FINALIZADA
+                </option>
+            </select>
+            <div class="text-red-600 flex items-center mb-2" *ngIf="errors.status_id">
+                {{errors.status_id}}
+            </div>
+        </div>
+        <div class="text-red-600 flex items-center justify-center" *ngIf="error">
+            {{error}}
+        </div>
+        <div class="flex items-center justify-center">
+            <button 
+                class="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" 
+                type="submit"
+            >
+              {{ update === true ? 'Atualizar' : 'Indicar'}}
+            </button>
+        </div>
+    </form>
+</div>
