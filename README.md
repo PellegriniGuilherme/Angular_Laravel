@@ -1,4 +1,4 @@
-# Angular_Laravel
+# <p align="center">Angular Laravel</p>
 Projeto "indique um amigo", back-end desenvolvido em Laravel e front-end desenvolvido em Angular
 
 ![Laravel](https://img.shields.io/badge/-Laravel-383838?style=for-the-badge&logo=Laravel) ![Angular](https://img.shields.io/badge/-Angular-383838?style=for-the-badge&logo=Angular)
